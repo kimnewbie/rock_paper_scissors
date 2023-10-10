@@ -24,9 +24,12 @@ const Rps = () => {
         window.location.reload()
     }
 
+    // 누군가 3번 이기면 게임 오버
     useEffect(() => {
         const comboMoves = userChoice + computerChoice
         if (userPoints <= 2 && computerPoints <= 2) {
+            // 비기지 않는 상황 연출
+            // 가지 경우, user가 이겼을때 computer가 이겼을 때
             if (comboMoves === 'scissorspaper' || comboMoves === 'rockscissors' || comboMoves === 'paperrock') {
                 // userPoints.current += 1
                 const updatedUserPoints = userPoints + 1
@@ -89,7 +92,7 @@ const Rps = () => {
 
             <div className='button-div'>
                 {gameOver &&
-                    <button className='button' onClick={() => reset()}>다시 시작</button>
+                    <button className='button' onClick={reset}>다시 시작</button>
                 }
             </div>
         </div>
