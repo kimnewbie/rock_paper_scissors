@@ -61,16 +61,16 @@ const Rps = () => {
         <div className="App">
             <h1 className='heading'>가위 바위 보</h1>
             <div className='score'>
-                <h1>User Points: {userPoints}</h1>
                 <h1>Computer Points: {computerPoints}</h1>
+                <h1>User Points: {userPoints}</h1>
             </div>
 
             <div className='choice'>
-                <div className='choice-user'>
-                    <img className='user-hand' src={`../images/${userChoice}.png`} alt=''></img>
-                </div>
                 <div className='choice-computer'>
                     <img className='computer-hand' src={`../images/${computerChoice}.png`} alt=''></img>
+                </div>
+                <div className='choice-user'>
+                    <img className='user-hand' src={`../images/${userChoice}.png`} alt=''></img>
                 </div>
             </div>
 
