@@ -1,11 +1,9 @@
 import './App.css';
-import RPS from './components/RPS';
-import Test from './components/Test';
+import Rps from './components/Rps';
 
 function App() {
   return (
-    // <RPS />
-    <Test />
+    <Rps />
   );
 }
 

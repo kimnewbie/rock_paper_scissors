@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useEffect, useState } from "react"
 
-const RPS = () => {
+const Rps = () => {
     const [userChoice, setUserChoice] = useState('rock')
     const [computerChoice, setComputerChoice] = useState('rock')
     const [userPoints, setUserPoints] = useState(0)
@@ -26,13 +26,13 @@ const RPS = () => {
 
     useEffect(() => {
         const comboMoves = userChoice + computerChoice
-        if (userPoints <= 4 && computerPoints <= 4) {
+        if (userPoints <= 2 && computerPoints <= 2) {
             if (comboMoves === 'scissorspaper' || comboMoves === 'rockscissors' || comboMoves === 'paperrock') {
                 // userPoints.current += 1
                 const updatedUserPoints = userPoints + 1
                 setUserPoints(updatedUserPoints)
                 setTurnResult('User gets the point!')
-                if (updatedUserPoints === 5) {
+                if (updatedUserPoints === 3) {
                     setResult('User Wins')
                     const gameOff = true
                     setGameOver(gameOff)
@@ -44,7 +44,7 @@ const RPS = () => {
                 const updatedComputerPoints = computerPoints + 1
                 setComputerPoints(updatedComputerPoints)
                 setTurnResult('Computer gets the point!')
-                if (updatedComputerPoints === 5) {
+                if (updatedComputerPoints === 3) {
                     setResult('Computer Wins')
                     const gameOff = true
                     setGameOver(gameOff)
@@ -59,7 +59,7 @@ const RPS = () => {
 
     return (
         <div className="App">
-            <h1 className='heading'>Rock-Paper-Scissors</h1>
+            <h1 className='heading'>가위 바위 보</h1>
             <div className='score'>
                 <h1>User Points: {userPoints}</h1>
                 <h1>Computer Points: {computerPoints}</h1>
@@ -89,11 +89,11 @@ const RPS = () => {
 
             <div className='button-div'>
                 {gameOver &&
-                    <button className='button' onClick={() => reset()}>Restart Game?</button>
+                    <button className='button' onClick={() => reset()}>다시 시작</button>
                 }
             </div>
         </div>
     )
 }
 
-export default RPS;
+export default Rps;
