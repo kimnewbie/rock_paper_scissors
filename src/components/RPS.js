@@ -8,6 +8,7 @@ const Rps = () => {
     const [turnResult, setTurnResult] = useState(null)
     const [result, setResult] = useState('Let\'s see who wins')
     const [gameOver, setGameOver] = useState(false)
+
     const choices = ['rock', 'paper', 'scissors']
 
     const handleClick = (value) => {
@@ -21,7 +22,15 @@ const Rps = () => {
     }
 
     const reset = () => {
-        window.location.reload()
+        // 초기화 기능
+        // window.location.reload();
+        setUserPoints(0);
+        setComputerPoints(0);
+        setTurnResult(null);
+        setResult('Let\'s see who wins');
+        setGameOver(false);
+        setUserChoice('rock');
+        setComputerChoice('rock');
     }
 
     // 누군가 3번 이기면 게임 오버
